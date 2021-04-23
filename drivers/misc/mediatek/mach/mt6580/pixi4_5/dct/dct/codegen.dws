@@ -49,13 +49,6 @@
                 <sensitive_level>Level</sensitive_level>
                 <debounce_en>Enable</debounce_en>
             </eint9>
-            <eint13>
-                <varName>NC</varName>
-                <debounce_time>0</debounce_time>
-                <polarity>Low</polarity>
-                <sensitive_level>Level</sensitive_level>
-                <debounce_en>Enable</debounce_en>
-            </eint13>
             <eint14>
                 <varName>EINT_DTV</varName>
                 <debounce_time>0</debounce_time>
