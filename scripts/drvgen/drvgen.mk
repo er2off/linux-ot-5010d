@@ -19,7 +19,7 @@ export DRVGEN_OUT
 
 ALL_DRVGEN_FILE := cust.dtsi
 
-DWS_FILE := $(srctree)/$(DRVGEN_PATH)/$(MTK_PROJECT).dws
+DWS_FILE := $(srctree)/$(DRVGEN_PATH)/codegen.dws
 ifneq ($(wildcard $(DWS_FILE)),)
 DRVGEN_FILE_LIST := $(addprefix $(DRVGEN_OUT)/,$(ALL_DRVGEN_FILE))
 else
