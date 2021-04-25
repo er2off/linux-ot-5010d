@@ -755,10 +755,26 @@
 			#size-cells = <0>;
 		};
 
-		touch: touch@0 {
+		/* Fixes from https://github.com/nik124seleznev/ZC500TG */
+		touch: touch {
 			compatible = "mediatek,mt6580-touch";
 			vtouch-supply = <&mt_pmic_vgp1_ldo_reg>;
 		};
+
+		mse: mse {
+			compatible = "mediatek,mt6580-mse";
+		};
+
+		hall_1: hall_1 {
+			compatible = "mediatek,mt6580-hall_1";
+		};
+
+		touch_panel: touch_panel {
+			compatible = "mediatek,mt6580-touch_panel";
+			vtouch-supply = <&mt_pmic_vgp1_ldo_reg>;
+		};
+		/* End of fixes */
+
 		accdet: accdet {
 			compatible = "mediatek,mt6580-accdet";
 		};
