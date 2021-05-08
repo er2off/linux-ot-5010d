@@ -1,4 +1,4 @@
-subdir-ccflags-y += -Werror -I$(srctree)/drivers/misc/mediatek/chip/
+subdir-ccflags-y +=  -I$(srctree)/drivers/misc/mediatek/chip/
 
 obj-$(CONFIG_MTK_CHIP) += CHIP_COMMON.o
 CHIP_COMMON-$(CONFIG_MTK_CHIP) := mt_chip_common.o

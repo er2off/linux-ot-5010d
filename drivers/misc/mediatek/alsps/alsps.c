@@ -201,15 +201,16 @@ static int als_real_enable(int enable)
 	if (1 == enable) {
 		if (true == cxt->is_als_active_data || true == cxt->is_als_active_nodata) {
 			err = cxt->als_ctl.enable_nodata(1);
-			if (err)
+			if (err) {
 				err = cxt->als_ctl.enable_nodata(1);
-				if (err) {
-					err = cxt->als_ctl.enable_nodata(1);
-					if (err)
-						ALSPS_ERR("alsps enable(%d) err 3 timers = %d\n", enable, err);
-				}
 			}
-			ALSPS_LOG("alsps real enable\n");
+			if (err) {
+				err = cxt->als_ctl.enable_nodata(1);
+				if (err)
+					ALSPS_ERR("alsps enable(%d) err 3 timers = %d\n", enable, err);
+			}
+		}
+		ALSPS_LOG("alsps real enable\n");
 	}
 
 	if (0 == enable) {

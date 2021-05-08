@@ -9,7 +9,7 @@ ifeq ($(ARCH),powerpc)
 GIT_VERSION = $(shell git describe --always --long --dirty || echo "unknown")
 
 CC := $(CROSS_COMPILE)$(CC)
-CFLAGS := -Wall -O2 -flto -Wall -Werror -DGIT_VERSION='"$(GIT_VERSION)"' -I$(CURDIR) $(CFLAGS)
+CFLAGS := -Wall -O2 -flto -Wall  -DGIT_VERSION='"$(GIT_VERSION)"' -I$(CURDIR) $(CFLAGS)
 
 export CC CFLAGS
 

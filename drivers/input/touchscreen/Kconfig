@@ -15,6 +15,18 @@ config OF_TOUCHSCREEN
 	def_tristate INPUT
 	depends on INPUT && OF
 
+config TOUCHSCREEN_MSTAR
+	tristate "MStar TouchScreens driver"
+	depends on I2C && OF
+	help
+	  Say Y here if you have an MStar touchscreen,
+	  or something similar enough.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called mstar-ts.
+
 config TOUCHSCREEN_88PM860X
 	tristate "Marvell 88PM860x touchscreen"
 	depends on MFD_88PM860X

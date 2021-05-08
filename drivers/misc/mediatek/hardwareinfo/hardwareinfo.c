@@ -49,7 +49,8 @@
 #include <linux/proc_fs.h>
 #include "lcm_drv.h"
 //#include "../../../drivers/input/touchscreen/mediatek/tpd.h"
-#include "tpd.h"
+#include <linux/input.h>
+
 extern LCM_DRIVER  *g_lcm_drv; 
 //extern char *lcm_temp_name; //temp lcm name 
 
@@ -103,13 +104,14 @@ static ssize_t show_ctp(struct device *dev,struct device_attribute *attr, char *
 
 //begin-20150602-fangjie-modify-for-minisw tp Rawdata test.
 //    old: ret_value = sprintf(buf + count, "ctp driver  :%s\n", g_tpd_drv->tpd_device_name);
-     if(g_tpd_drv)
+/*     if(g_tpd_drv)
      {
 	ret_value = sprintf(buf, "tp:%s;", g_tpd_drv->tpd_device_name);//20160310 liujunting modify for TP information show
         ret_value += sprintf(buf+ret_value, "FW_version:%s;", tpd->tp_firmware_version); //20160310 liujunting add for TP information show
         ret_value += sprintf(buf+ret_value, "vendor_id:0x%x\n", tpd->tp_vendor_id); //20160310 liujunting add for TP information show
      }
 	else
+*/
         ret_value = sprintf(buf, "NULL\n");	
 //end-20150602-fangjie-modify-for-minisw tp Rawdata test.
 

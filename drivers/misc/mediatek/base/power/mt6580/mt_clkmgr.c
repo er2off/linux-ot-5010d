@@ -2708,7 +2708,7 @@ static int sdm_pll_dump_regs_op(struct pll *pll, unsigned int *ptr)
 
 static const unsigned int pll_vcodivsel_map[2] = {1, 2};
 static const unsigned int pll_prediv_map[4] = {1, 2, 4, 4};
-static const unsigned int pll_posdiv_map[8] = {1, 2, 4, 8, 16, 16, 16, 16};
+/* static const unsigned int pll_posdiv_map[8] = {1, 2, 4, 8, 16, 16, 16, 16}; */
 static const unsigned int pll_fbksel_map[4] = {1, 2, 4, 4};
 static const unsigned int pll_n_info_map[14] = {
 	13000000,

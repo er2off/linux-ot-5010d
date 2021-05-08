@@ -1315,10 +1315,11 @@ R_PROFILE_STRUCT_P fgauge_get_profile_r_table(unsigned int temperature)
 	if (temperature == batt_meter_cust_data.temperature_t3)
 		return &r_profile_t3[g_fg_battery_id][0];
 		
-	if (temperature == batt_meter_cust_data.temperature_t)
+	if (temperature == batt_meter_cust_data.temperature_t) {
 		//return &battery_profile_temperature[0];
 		//20150629 wuyue for task395321,should return ZV table,not CV table
 		return &r_profile_temperature[0];
+	}
 		
 		return NULL;
 }

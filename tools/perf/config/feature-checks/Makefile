@@ -39,16 +39,16 @@ BUILD = $(CC) $(CFLAGS) -o $(OUTPUT)$@ $(patsubst %.bin,%.c,$@) $(LDFLAGS)
 ###############################
 
 test-all.bin:
-	$(BUILD) -Werror -fstack-protector-all -O2 -Werror -D_FORTIFY_SOURCE=2 -ldw -lelf -lnuma -lelf -laudit -I/usr/include/slang -lslang $(shell $(PKG_CONFIG) --libs --cflags gtk+-2.0 2>/dev/null) $(FLAGS_PERL_EMBED) $(FLAGS_PYTHON_EMBED) -DPACKAGE='"perf"' -lbfd -ldl
+	$(BUILD)  -fstack-protector-all -O2  -D_FORTIFY_SOURCE=2 -ldw -lelf -lnuma -lelf -laudit -I/usr/include/slang -lslang $(shell $(PKG_CONFIG) --libs --cflags gtk+-2.0 2>/dev/null) $(FLAGS_PERL_EMBED) $(FLAGS_PYTHON_EMBED) -DPACKAGE='"perf"' -lbfd -ldl
 
 test-hello.bin:
 	$(BUILD)
 
 test-stackprotector-all.bin:
-	$(BUILD) -Werror -fstack-protector-all
+	$(BUILD)  -fstack-protector-all
 
 test-fortify-source.bin:
-	$(BUILD) -O2 -Werror -D_FORTIFY_SOURCE=2
+	$(BUILD) -O2  -D_FORTIFY_SOURCE=2
 
 test-bionic.bin:
 	$(BUILD)
@@ -129,7 +129,7 @@ test-libdw-dwarf-unwind.bin:
 	$(BUILD)
 
 test-sync-compare-and-swap.bin:
-	$(BUILD) -Werror
+	$(BUILD) 
 
 -include *.d
 
